@@ -10,7 +10,6 @@ import com.example.burgershub.util.formattedValue
 import com.squareup.picasso.Picasso
 
 class BurgersAdapter(
-  context: Context,
   private val burgerList: List<Burger>,
   private val burgerClick: (String) -> Unit
 ) : RecyclerView.Adapter<BurgersAdapter.MyViewHolder>() {
