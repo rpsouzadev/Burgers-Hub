@@ -6,7 +6,7 @@ interface BurgerRepository {
 
   suspend fun getBurgers(): List<BurgerDTO>
 
-  suspend fun getBurgerById(burgerId: Int): BurgerDTO
+  suspend fun getBurgerById(burgerId: String): BurgerDTO
 
   suspend fun getBurgerByName(burgerName: String): List<BurgerDTO>
 }
