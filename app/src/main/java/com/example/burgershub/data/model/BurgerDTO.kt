@@ -6,6 +6,6 @@ data class BurgerDTO(
   val images: List<ImageDTO>?,
   val ingredients: List<IngredientDTO>?,
   val name: String?,
-  val price: Double?,
+  val price: Float?,
   val veg: Boolean?,
 )
