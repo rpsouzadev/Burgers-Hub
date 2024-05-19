@@ -10,7 +10,9 @@ class GetBurgerByNameUseCase @Inject constructor(
 ) {
 
   suspend operator fun invoke(nameBurger: String): List<Burger> {
-    return burgerRepository.getBurgerByName(nameBurger).map { it.toDomain() }
+    return burgerRepository.getBurgerByName(nameBurger).map { it.toDomain() }.filter {
+      it.name?.contains(nameBurger, true) == true
+    }
   }
 
 }

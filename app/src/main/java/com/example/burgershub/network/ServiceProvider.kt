@@ -18,7 +18,7 @@ class ServiceProvider @Inject constructor(context: Context) {
 
   private val mockpInterceptor = MockPInterceptor
     .Builder(context)
-    .addDelayInMillis(5_000L, 10_000L)
+    .addDelayInMillis(1_000L, 1_000L)
     .build()
 
   private val client = OkHttpClient.Builder()

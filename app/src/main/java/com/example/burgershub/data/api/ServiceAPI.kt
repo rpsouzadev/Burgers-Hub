@@ -18,5 +18,5 @@ interface ServiceAPI {
 
   @MOCK(asset = "burger_name_response.json", runDelay = true)
   @GET("find-burger/")
-  suspend fun getBurgerByName(@Query("searchQuery=q&search") burgerName: String): List<BurgerDTO>
+  suspend fun getBurgerByName(@Query("search") burgerName: String): List<BurgerDTO>
 }
