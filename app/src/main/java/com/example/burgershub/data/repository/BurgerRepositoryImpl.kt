@@ -12,7 +12,7 @@ class BurgerRepositoryImpl @Inject constructor(
     return serviceAPI.getBurgers()
   }
 
-  override suspend fun getBurgerById(burgerId: String): BurgerDTO {
+  override suspend fun getBurgerById(burgerId: Int): BurgerDTO {
     return serviceAPI.getBurgerById(burgerId)
   }
 

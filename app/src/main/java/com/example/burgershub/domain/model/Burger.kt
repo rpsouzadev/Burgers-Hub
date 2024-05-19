@@ -1,7 +1,7 @@
 package com.example.burgershub.domain.model
 
 data class Burger(
-  val id: String?,
+  val id: Int?,
   val desc: String?,
   val images: List<Image>?,
   val ingredients: List<Ingredient>?,

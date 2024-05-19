@@ -11,7 +11,7 @@ interface ServiceAPI {
   suspend fun getBurgers(): List<BurgerDTO>
 
   @GET("burgers/{burger_id}")
-  suspend fun getBurgerById(@Path("burger_id") burgerId: String): BurgerDTO
+  suspend fun getBurgerById(@Path("burger_id") burgerId: Int): BurgerDTO
 
   @GET("find-burger/")
   suspend fun getBurgerByName(@Query("searchQuery=q&search") burgerName: String): List<BurgerDTO>

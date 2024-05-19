@@ -11,7 +11,7 @@ import com.squareup.picasso.Picasso
 
 class BurgersAdapter(
   private val burgerList: List<Burger>,
-  private val burgerClick: (String) -> Unit
+  private val burgerClick: (Int) -> Unit
 ) : RecyclerView.Adapter<BurgersAdapter.MyViewHolder>() {
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -40,7 +40,7 @@ class BurgersAdapter(
       .fit().centerCrop()
       .into(holder.binding.imageBurger)
 
-    holder.itemView.setOnClickListener { burgerClick(burger.id ?: "") }
+    holder.itemView.setOnClickListener { burgerClick(burger.id ?: 0) }
   }
 
   inner class MyViewHolder(val binding: BurgerItemBinding) : RecyclerView.ViewHolder(binding.root)

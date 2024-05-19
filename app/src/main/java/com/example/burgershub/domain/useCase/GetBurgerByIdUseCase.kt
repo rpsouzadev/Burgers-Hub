@@ -9,7 +9,7 @@ class GetBurgerByIdUseCase @Inject constructor(
   private val burgerRepository: BurgerRepository
 ) {
 
-  suspend operator fun invoke(burgerId: String): Burger {
+  suspend operator fun invoke(burgerId: Int): Burger {
     return burgerRepository.getBurgerById(burgerId).toDomain()
   }
 
