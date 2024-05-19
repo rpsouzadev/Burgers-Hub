@@ -12,6 +12,7 @@ import androidx.navigation.fragment.navArgs
 import com.example.burgershub.R
 import com.example.burgershub.databinding.FragmentDetailsBinding
 import com.example.burgershub.domain.model.Burger
+import com.example.burgershub.domain.model.Ingredient
 import com.example.burgershub.util.StateView
 import com.example.burgershub.util.formattedValue
 import com.squareup.picasso.Picasso
@@ -72,6 +73,16 @@ class DetailsFragment : Fragment() {
     binding.textBurger.text = burger.name
     binding.textDescription.text = burger.desc
     binding.textPrice.text = burger.price.formattedValue()
+
+    initRecycler(burger.ingredients ?: emptyList())
+  }
+
+  private fun initRecycler(ingredientList: List<Ingredient>) {
+    with(binding.rvIngredients) {
+      setHasFixedSize(true)
+
+      adapter = IngredientsAdapter(ingredientList)
+    }
   }
 
   override fun onDestroyView() {
